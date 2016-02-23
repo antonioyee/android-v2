@@ -4,4 +4,5 @@
     <dimen name="ball_size">50dp</dimen>
     <dimen name="height_score">60dp</dimen>
     <dimen name="padding_medium">10dp</dimen>
+    <dimen name="font_score">30sp</dimen>
 </resources>

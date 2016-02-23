@@ -10,4 +10,5 @@
     <color name="blue">#3dc2e0</color>
     <color name="yellow">#e8e52c</color>
     <color name="white">#fff</color>
+    <color name="score">#bbbdbf</color>
 </resources>

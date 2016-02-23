@@ -51,7 +51,7 @@ public class StadiumActivity extends AppCompatActivity implements PlayerFragment
     }
 
     public void deleteBall(){
-        for(Fragment fragment: dt.getFragments() ){
+        for( Fragment fragment: dt.getFragments() ){
             PlayerFragment playerFragment = (PlayerFragment) fragment;
             playerFragment.showBall(false);
         }

@@ -75,7 +75,7 @@ public class PlayerFragment extends Fragment implements View.OnClickListener {
         txtName.setText(name);
         imgPlayer.setColorFilter(color);
 
-        imgPlayer.setOnClickListener(this);
+        imgBall.setOnClickListener(this);
 
         return view;
     }

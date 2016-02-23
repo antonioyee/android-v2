@@ -3,59 +3,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="mx.antonioyee.soccergamefragment.StadiumActivity">
 
-    <FrameLayout
-        android:id="@+id/goalkeeperBlue"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_score"
+        android:orientation="horizontal"
+        android:background="@color/score">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+        <TextView
+            android:id="@+id/txtScoreBlue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/playerLeftBlue"></FrameLayout>
+            android:gravity="right"
+            android:padding="@dimen/padding_medium"
+            android:text="@string/zero"
+            android:textSize="@dimen/font_score"
+            android:textColor="@color/white"
+            android:background="@color/blue"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+        <TextView
+            android:id="@+id/txtScoreYellow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/playerRightBlue"></FrameLayout>
+            android:padding="@dimen/padding_medium"
+            android:text="@string/zero"
+            android:textSize="@dimen/font_score"
+            android:textColor="@color/white"
+            android:background="@color/yellow"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:id="@+id/goalkeeperBlue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/playerLeftYellow"></FrameLayout>
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/playerLeftBlue"></FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/playerRightBlue"></FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/playerLeftYellow"></FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/playerRightYellow"></FrameLayout>
+
+        </LinearLayout>
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/playerRightYellow"></FrameLayout>
+            android:id="@+id/goalkeeperYellow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/goalkeeperYellow"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+
 
 </LinearLayout>

@@ -9,7 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_score"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/score">
 
         <TextView
             android:id="@+id/txtScoreBlue"
@@ -19,8 +20,9 @@
             android:gravity="right"
             android:padding="@dimen/padding_medium"
             android:text="@string/zero"
-            android:textSize="@dimen/font_title"
-            android:textColor="@color/white"/>
+            android:textSize="@dimen/font_score"
+            android:textColor="@color/white"
+            android:background="@color/blue"/>
 
         <TextView
             android:id="@+id/txtScoreYellow"
@@ -29,8 +31,9 @@
             android:layout_weight="1"
             android:padding="@dimen/padding_medium"
             android:text="@string/zero"
-            android:textSize="@dimen/font_title"
-            android:textColor="@color/white"/>
+            android:textSize="@dimen/font_score"
+            android:textColor="@color/white"
+            android:background="@color/yellow"/>
 
     </LinearLayout>
 
