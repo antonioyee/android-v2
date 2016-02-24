@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import mx.antonioyee.pueblosmagicos.R;
+import mx.antonioyee.pueblosmagicos.fragments.ListMagicTownFragment;
 import mx.antonioyee.pueblosmagicos.fragments.ListNewsFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.content, new ListNewsFragment());
+        ft.replace(R.id.content, new ListMagicTownFragment());
         ft.commit();
     }
 }

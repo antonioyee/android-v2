@@ -5,4 +5,7 @@
     <dimen name="font_normal">20sp</dimen>
     <dimen name="padding_small">5dp</dimen>
     <dimen name="font_medium">25sp</dimen>
+    <dimen name="cardview_town">200dp</dimen>
+    <dimen name="font_title">35sp</dimen>
+    <dimen name="padding_medium">15dp</dimen>
 </resources>
