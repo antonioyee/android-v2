@@ -106,7 +106,7 @@ public class MagicTown {
         List<MagicTown> towns = new ArrayList<>();
 
         towns.add(new MagicTown("Álamos"," Sonora","http://www.sectur.gob.mx/wp-content/uploads/2014/04/SON_alamos_635-700x275.jpg"));
-        towns.add(new MagicTown("Arteaga"," Coahuila","http://www.sectur.gob.mx/wp-content/uploads/2014/04/SON_alamos_635-700x275.jpg"));
+        towns.add(new MagicTown("Arteaga"," Coahuila","http://www.sectur.gob.mx/wp-content/uploads/2014/04/Arteaga-Bosques-de-Monterreal-2-700x275.jpg"));
         towns.add(new MagicTown("Bacalar"," Quintana Roo","http://www.playasmexico.com.mx/IMG/jpg_bacalar.jpg"));
         towns.add(new MagicTown("Batopilas"," Chihuahua","https://batopilas.files.wordpress.com/2009/04/mexico0702.jpg"));
         towns.add(new MagicTown("Bernal"," Querétaro","http://www.sectur.gob.mx/wp-content/uploads/2014/04/QRO_bernal_94-700x275.jpg"));
