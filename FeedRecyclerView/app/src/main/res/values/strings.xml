@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FeedRecyclerView</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_title">Title Feed</string>
+    <string name="default_date">dd/MM/yyyy</string>
+    <string name="default_content">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las</string>
 </resources>
