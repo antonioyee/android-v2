@@ -8,4 +8,6 @@
     <dimen name="cardview_town">200dp</dimen>
     <dimen name="font_title">35sp</dimen>
     <dimen name="padding_medium">15dp</dimen>
+    <dimen name="height_photo">190dp</dimen>
+    <dimen name="btn_icon">56dp</dimen>
 </resources>
