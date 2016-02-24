@@ -3,6 +3,7 @@ package mx.antonioyee.pueblosmagicos.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +24,12 @@ public class ImagesTownRVAdapter extends RecyclerView.Adapter<ImagesTownRVAdapte
 
     private List<String> images;
     private Activity activity;
+    private OnItemClickListener onItemClickListener;
 
-    public ImagesTownRVAdapter(List<String> images, Activity activity) {
+    public ImagesTownRVAdapter(List<String> images, Activity activity, @NonNull OnItemClickListener onItemClickListener) {
         this.images = images;
         this.activity = activity;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -55,6 +58,13 @@ public class ImagesTownRVAdapter extends RecyclerView.Adapter<ImagesTownRVAdapte
             }
         });
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onClick(images.get(position));
+            }
+        });
+
     }
 
     @Override
@@ -66,13 +76,19 @@ public class ImagesTownRVAdapter extends RecyclerView.Adapter<ImagesTownRVAdapte
 
         ImageButton btnShare;
         ImageView imgPhoto;
+        View itemView;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             btnShare = (ImageButton) itemView.findViewById(R.id.btnShare);
             imgPhoto = (ImageView) itemView.findViewById(R.id.imgPhoto);
+            this.itemView = itemView;
         }
 
+    }
+
+    public interface OnItemClickListener{
+        public void onClick(String path);
     }
 }
