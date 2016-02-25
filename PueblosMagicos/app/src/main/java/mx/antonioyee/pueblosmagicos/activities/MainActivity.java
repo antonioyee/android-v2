@@ -9,6 +9,7 @@ import mx.antonioyee.pueblosmagicos.R;
 import mx.antonioyee.pueblosmagicos.fragments.ImagesTownFragment;
 import mx.antonioyee.pueblosmagicos.fragments.ListMagicTownFragment;
 import mx.antonioyee.pueblosmagicos.fragments.ListNewsFragment;
+import mx.antonioyee.pueblosmagicos.fragments.LocationFragment;
 import mx.antonioyee.pueblosmagicos.fragments.NavigationFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.content, new ImagesTownFragment());
+        ft.replace(R.id.content, new LocationFragment());
         ft.commit();
     }
 }
