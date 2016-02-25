@@ -1,5 +1,5 @@
 
-package mx.antonioyee.pueblosmagicos.responses;
+package mx.antonioyee.pueblosmagicos.responses.geocoding;
 
 import java.util.ArrayList;
 import java.util.List;

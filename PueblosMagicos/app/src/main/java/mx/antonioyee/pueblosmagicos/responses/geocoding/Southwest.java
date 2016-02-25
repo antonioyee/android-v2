@@ -1,10 +1,10 @@
 
-package mx.antonioyee.pueblosmagicos.responses;
+package mx.antonioyee.pueblosmagicos.responses.geocoding;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Northeast {
+public class Southwest {
 
     @SerializedName("lat")
     @Expose
