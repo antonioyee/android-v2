@@ -22,31 +22,34 @@ public class MagicTownRVAdapter extends RecyclerView.Adapter<MagicTownRVAdapter.
 
     private List<MagicTown> objects;
     private Context context;
+    private OnItemClickListener mListener;
 
-    public MagicTownRVAdapter(List<MagicTown> objects, Context context) {
+    public MagicTownRVAdapter(List<MagicTown> objects, Context context, OnItemClickListener mListener) {
         this.objects = objects;
         this.context = context;
+        this.mListener = mListener;
     }
 
     @Override
     public MagicTownRVAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_magic_town, parent, false);
-
         ViewHolder holder = new ViewHolder(view);
-
-        holder.imgTown = (ImageView) view.findViewById(R.id.imgTown);
-        holder.txtTownName = (TextView) view.findViewById(R.id.txtTownName);
 
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MagicTownRVAdapter.ViewHolder holder, int position) {
-
-        MagicTown magicTown = objects.get(position);
+        final MagicTown magicTown = objects.get(position);
         holder.txtTownName.setText(magicTown.getName());
         Picasso.with(context).load(magicTown.getPathMainPhoto()).into(holder.imgTown);
 
+        holder.parentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onClick(magicTown);
+            }
+        });
     }
 
     @Override
@@ -58,10 +61,19 @@ public class MagicTownRVAdapter extends RecyclerView.Adapter<MagicTownRVAdapter.
 
         ImageView imgTown;
         TextView txtTownName;
+        View parentView;
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            imgTown = (ImageView) itemView.findViewById(R.id.imgTown);
+            txtTownName = (TextView) itemView.findViewById(R.id.txtTownName);
+            parentView = itemView;
         }
 
+    }
+
+    public interface OnItemClickListener{
+        public void onClick(MagicTown magicTown);
     }
 }

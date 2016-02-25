@@ -11,8 +11,9 @@ import mx.antonioyee.pueblosmagicos.fragments.ListMagicTownFragment;
 import mx.antonioyee.pueblosmagicos.fragments.ListNewsFragment;
 import mx.antonioyee.pueblosmagicos.fragments.LocationFragment;
 import mx.antonioyee.pueblosmagicos.fragments.NavigationFragment;
+import mx.antonioyee.pueblosmagicos.models.MagicTown;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ListMagicTownFragment.CallBacks {
 
     private FragmentManager fm;
 
@@ -24,7 +25,17 @@ public class MainActivity extends AppCompatActivity {
         fm = getSupportFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.content, new LocationFragment());
+        ft.replace(R.id.content, new ListMagicTownFragment());
+        ft.commit();
+    }
+
+    @Override
+    public void onTownSelected(MagicTown magicTown) {
+        fm = getSupportFragmentManager();
+
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.content, new LocationFragment().newInstance(magicTown.getName() + "," + magicTown.getState()));
+        ft.addToBackStack(LocationFragment.TAG);
         ft.commit();
     }
 }

@@ -2,6 +2,7 @@ package mx.antonioyee.pueblosmagicos.fragments;
 
 
 import android.os.Bundle;
+import android.os.ParcelUuid;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -38,17 +39,45 @@ import mx.antonioyee.pueblosmagicos.responses.geocoding.Result;
  */
 public class LocationFragment extends Fragment implements Response.ErrorListener, Response.Listener<String> {
 
+    private static final String ARG_PARAM_TOWN_NAME = "paramTownName";
     private GoogleMap gMap;
     private String townName;
+    public static final String TAG = "LocationFragment";
+    public static final Double LAT = 22.796439;
+    public static final Double LON = -101.909180;
 
     public LocationFragment() {
         // Required empty public constructor
     }
 
+    public static LocationFragment newInstance(String townName){
+        LocationFragment locationFragment = new LocationFragment();
+        Bundle args = new Bundle();
+
+        args.putString(ARG_PARAM_TOWN_NAME, townName);
+
+        locationFragment.setArguments(args);
+
+        return locationFragment;
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.townName = "san cristobal de las casas chiapas chiapas";
+
+        if ( getArguments() != null ){
+            this.townName = getArguments().getString(ARG_PARAM_TOWN_NAME);
+        }
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        LatLng latLng = new LatLng(LAT, LON);
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 3);
+        gMap.moveCamera(cameraUpdate);
     }
 
     @Override
@@ -118,14 +147,14 @@ public class LocationFragment extends Fragment implements Response.ErrorListener
 
         LatLng latLng = new LatLng(location.getLat(), location.getLng());
 
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 13);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 15);
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         markerOptions.title(result.getFormattedAddress());
 
         gMap.addMarker(markerOptions);
-        gMap.animateCamera(cameraUpdate);
+        gMap.moveCamera(cameraUpdate);
     }
 
 }
