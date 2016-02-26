@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements ListMagicTownFrag
         fm = getSupportFragmentManager();
 
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.content, new ImagesTownFragment());
+        ft.replace(R.id.content, new ListMagicTownFragment());
         ft.commit();
     }
 

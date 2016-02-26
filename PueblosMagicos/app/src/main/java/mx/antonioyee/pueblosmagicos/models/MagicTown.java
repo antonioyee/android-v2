@@ -1,13 +1,29 @@
 package mx.antonioyee.pueblosmagicos.models;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import mx.antonioyee.pueblosmagicos.database.DatabaseAdapter;
+import mx.antonioyee.pueblosmagicos.database.DatabaseHelper;
 
 /**
  * Created by antonioyee on 23/02/16.
  */
 public class MagicTown {
 
+    public static final String TABLE_NAME = "MagicTown";
+    public static final String ID_MAGIC_TOWN = "idMagicTown";
+    public static final String NAME = "name";
+    public static final String DESCRIPTION = "description";
+    public static final String LATITUDE = "latitude";
+    public static final String LONGITUDE = "longitude";
+    public static final String PATH_MAIN_PHOTO = "pathMainPhoto";
+    public static final String STATE = "state";
+
+    private int idMagicTown;
     private String name;
     private String description;
     private Double latitude;
@@ -36,6 +52,16 @@ public class MagicTown {
         this.name = name;
         this.state = state;
         this.pathMainPhoto = pathMainPhoto;
+    }
+
+    public MagicTown(int idMagicTown, String name, String description, Double latitude, Double longitude, String pathMainPhoto, String state) {
+        this.idMagicTown = idMagicTown;
+        this.name = name;
+        this.description = description;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.pathMainPhoto = pathMainPhoto;
+        this.state = state;
     }
 
     public String getName() {
@@ -102,7 +128,15 @@ public class MagicTown {
         this.photos = photos;
     }
 
-    public  static List<MagicTown> getData(){
+    public int getIdMagicTown() {
+        return idMagicTown;
+    }
+
+    public void setIdMagicTown(int idMagicTown) {
+        this.idMagicTown = idMagicTown;
+    }
+
+    public static List<MagicTown> getData(){
         List<MagicTown> towns = new ArrayList<>();
 
         towns.add(new MagicTown("Álamos"," Sonora","http://www.sectur.gob.mx/wp-content/uploads/2014/04/SON_alamos_635-700x275.jpg"));
@@ -167,5 +201,38 @@ public class MagicTown {
         towns.add(new MagicTown("Tacámbaro"," Michoacán","https://www.quadratin.com.mx/www/contenido/uploads/2013/05/Exhibiran-la-herencia-grafica-de-Tacambaro-Michoacan-en-el-MuFi.jpg"));
 
         return towns;
+    }
+
+    public static List<MagicTown> getMagicTowns(){
+        List<MagicTown> object = new ArrayList<>();
+
+        Cursor cursor = DatabaseAdapter.getDB().query(TABLE_NAME,null,null,null,null,null,null);
+
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+            int idMagicTown = cursor.getInt(cursor.getColumnIndexOrThrow(ID_MAGIC_TOWN));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow(NAME));
+            String description = cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION));
+            String pathMainPhoto = cursor.getString(cursor.getColumnIndexOrThrow(PATH_MAIN_PHOTO));
+            String state = cursor.getString(cursor.getColumnIndexOrThrow(STATE));
+            double latitude = cursor.getDouble(cursor.getColumnIndexOrThrow(LATITUDE));
+            double longitude = cursor.getDouble(cursor.getColumnIndexOrThrow(LONGITUDE));
+
+            object.add(new MagicTown(idMagicTown, name, description, latitude, longitude, pathMainPhoto, state));
+        }
+
+        return object;
+    }
+
+    public static void updateMagicTown(MagicTown town){
+        ContentValues cv = new ContentValues();
+
+        cv.put(NAME, town.getName());
+        cv.put(DESCRIPTION, town.getDescription());
+        cv.put(STATE, town.getState());
+        cv.put(LATITUDE, town.getLatitude());
+        cv.put(LONGITUDE, town.getLongitude());
+        cv.put(PATH_MAIN_PHOTO, town.getPathMainPhoto());
+
+        DatabaseAdapter.getDB().update(TABLE_NAME, cv, ID_MAGIC_TOWN + "=" + town.getIdMagicTown(), null);
     }
 }
