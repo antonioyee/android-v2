@@ -1,26 +1,25 @@
-
-package mx.antonioyee.pueblosmagicos.responses.venue;
+package mx.antonioyee.pueblosmagicos.responses.venues;
 
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class HereNow {
+public class Specials {
 
     @SerializedName("count")
     @Expose
-    private int count;
-    @SerializedName("summary")
+    private Integer count;
+    @SerializedName("items")
     @Expose
-    private String summary;
+    private List<Object> items = new ArrayList<Object>();
 
     /**
      * 
      * @return
      *     The count
      */
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
@@ -29,26 +28,26 @@ public class HereNow {
      * @param count
      *     The count
      */
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 
     /**
      * 
      * @return
-     *     The summary
+     *     The items
      */
-    public String getSummary() {
-        return summary;
+    public List<Object> getItems() {
+        return items;
     }
 
     /**
      * 
-     * @param summary
-     *     The summary
+     * @param items
+     *     The items
      */
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setItems(List<Object> items) {
+        this.items = items;
     }
 
 }

@@ -4,7 +4,7 @@ package mx.antonioyee.pueblosmagicos.responses.venue;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Icon {
+public class Photo {
 
     @SerializedName("prefix")
     @Expose

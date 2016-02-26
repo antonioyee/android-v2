@@ -1,3 +1,4 @@
+
 package mx.antonioyee.pueblosmagicos.responses.venue;
 
 import java.util.ArrayList;
@@ -15,10 +16,10 @@ public class Group {
     private String name;
     @SerializedName("count")
     @Expose
-    private Integer count;
+    private int count;
     @SerializedName("items")
     @Expose
-    private List<Object> items = new ArrayList<Object>();
+    private List<Item> items = new ArrayList<Item>();
 
     /**
      * 
@@ -61,7 +62,7 @@ public class Group {
      * @return
      *     The count
      */
-    public Integer getCount() {
+    public int getCount() {
         return count;
     }
 
@@ -70,7 +71,7 @@ public class Group {
      * @param count
      *     The count
      */
-    public void setCount(Integer count) {
+    public void setCount(int count) {
         this.count = count;
     }
 
@@ -79,7 +80,7 @@ public class Group {
      * @return
      *     The items
      */
-    public List<Object> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
@@ -88,7 +89,7 @@ public class Group {
      * @param items
      *     The items
      */
-    public void setItems(List<Object> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 

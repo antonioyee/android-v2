@@ -1,4 +1,4 @@
-package mx.antonioyee.pueblosmagicos.responses.venue;
+package mx.antonioyee.pueblosmagicos.responses.venues;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

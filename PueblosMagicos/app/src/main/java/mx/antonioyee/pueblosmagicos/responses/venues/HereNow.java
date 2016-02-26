@@ -1,5 +1,4 @@
-
-package mx.antonioyee.pueblosmagicos.responses.venue;
+package mx.antonioyee.pueblosmagicos.responses.venues;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +9,20 @@ public class HereNow {
 
     @SerializedName("count")
     @Expose
-    private int count;
+    private Integer count;
     @SerializedName("summary")
     @Expose
     private String summary;
+    @SerializedName("groups")
+    @Expose
+    private List<Group> groups = new ArrayList<Group>();
 
     /**
      * 
      * @return
      *     The count
      */
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
@@ -29,7 +31,7 @@ public class HereNow {
      * @param count
      *     The count
      */
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 
@@ -49,6 +51,24 @@ public class HereNow {
      */
     public void setSummary(String summary) {
         this.summary = summary;
+    }
+
+    /**
+     * 
+     * @return
+     *     The groups
+     */
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    /**
+     * 
+     * @param groups
+     *     The groups
+     */
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
     }
 
 }

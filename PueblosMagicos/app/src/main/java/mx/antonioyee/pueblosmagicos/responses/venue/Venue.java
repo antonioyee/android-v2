@@ -1,3 +1,4 @@
+
 package mx.antonioyee.pueblosmagicos.responses.venue;
 
 import java.util.ArrayList;
@@ -19,30 +20,57 @@ public class Venue {
     @SerializedName("location")
     @Expose
     private Location location;
+    @SerializedName("canonicalUrl")
+    @Expose
+    private String canonicalUrl;
     @SerializedName("categories")
     @Expose
     private List<Category> categories = new ArrayList<Category>();
     @SerializedName("verified")
     @Expose
-    private Boolean verified;
-    @SerializedName("stats")
+    private boolean verified;
+    @SerializedName("url")
     @Expose
-    private Stats stats;
-    @SerializedName("allowMenuUrlEdit")
+    private String url;
+    @SerializedName("price")
     @Expose
-    private Boolean allowMenuUrlEdit;
-    @SerializedName("specials")
+    private Price price;
+    @SerializedName("hasMenu")
     @Expose
-    private Specials specials;
+    private boolean hasMenu;
+    @SerializedName("dislike")
+    @Expose
+    private boolean dislike;
+    @SerializedName("ok")
+    @Expose
+    private boolean ok;
+    @SerializedName("rating")
+    @Expose
+    private double rating;
+    @SerializedName("ratingColor")
+    @Expose
+    private String ratingColor;
+    @SerializedName("ratingSignals")
+    @Expose
+    private int ratingSignals;
+    @SerializedName("photos")
+    @Expose
+    private Photos photos;
+    @SerializedName("reasons")
+    @Expose
+    private Reasons reasons;
     @SerializedName("hereNow")
     @Expose
     private HereNow hereNow;
-    @SerializedName("referralId")
+    @SerializedName("createdAt")
     @Expose
-    private String referralId;
-    @SerializedName("venueChains")
+    private int createdAt;
+    @SerializedName("tips")
     @Expose
-    private List<Object> venueChains = new ArrayList<Object>();
+    private Tips tips;
+    @SerializedName("bestPhoto")
+    @Expose
+    private BestPhoto bestPhoto;
 
     /**
      * 
@@ -119,6 +147,24 @@ public class Venue {
     /**
      * 
      * @return
+     *     The canonicalUrl
+     */
+    public String getCanonicalUrl() {
+        return canonicalUrl;
+    }
+
+    /**
+     * 
+     * @param canonicalUrl
+     *     The canonicalUrl
+     */
+    public void setCanonicalUrl(String canonicalUrl) {
+        this.canonicalUrl = canonicalUrl;
+    }
+
+    /**
+     * 
+     * @return
      *     The categories
      */
     public List<Category> getCategories() {
@@ -139,7 +185,7 @@ public class Venue {
      * @return
      *     The verified
      */
-    public Boolean getVerified() {
+    public boolean isVerified() {
         return verified;
     }
 
@@ -148,62 +194,188 @@ public class Venue {
      * @param verified
      *     The verified
      */
-    public void setVerified(Boolean verified) {
+    public void setVerified(boolean verified) {
         this.verified = verified;
     }
 
     /**
      * 
      * @return
-     *     The stats
+     *     The url
      */
-    public Stats getStats() {
-        return stats;
+    public String getUrl() {
+        return url;
     }
 
     /**
      * 
-     * @param stats
-     *     The stats
+     * @param url
+     *     The url
      */
-    public void setStats(Stats stats) {
-        this.stats = stats;
-    }
-
-    /**
-     * 
-     * @return
-     *     The allowMenuUrlEdit
-     */
-    public Boolean getAllowMenuUrlEdit() {
-        return allowMenuUrlEdit;
-    }
-
-    /**
-     * 
-     * @param allowMenuUrlEdit
-     *     The allowMenuUrlEdit
-     */
-    public void setAllowMenuUrlEdit(Boolean allowMenuUrlEdit) {
-        this.allowMenuUrlEdit = allowMenuUrlEdit;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     /**
      * 
      * @return
-     *     The specials
+     *     The price
      */
-    public Specials getSpecials() {
-        return specials;
+    public Price getPrice() {
+        return price;
     }
 
     /**
      * 
-     * @param specials
-     *     The specials
+     * @param price
+     *     The price
      */
-    public void setSpecials(Specials specials) {
-        this.specials = specials;
+    public void setPrice(Price price) {
+        this.price = price;
+    }
+
+    /**
+     * 
+     * @return
+     *     The hasMenu
+     */
+    public boolean isHasMenu() {
+        return hasMenu;
+    }
+
+    /**
+     * 
+     * @param hasMenu
+     *     The hasMenu
+     */
+    public void setHasMenu(boolean hasMenu) {
+        this.hasMenu = hasMenu;
+    }
+
+    /**
+     * 
+     * @return
+     *     The dislike
+     */
+    public boolean isDislike() {
+        return dislike;
+    }
+
+    /**
+     * 
+     * @param dislike
+     *     The dislike
+     */
+    public void setDislike(boolean dislike) {
+        this.dislike = dislike;
+    }
+
+    /**
+     * 
+     * @return
+     *     The ok
+     */
+    public boolean isOk() {
+        return ok;
+    }
+
+    /**
+     * 
+     * @param ok
+     *     The ok
+     */
+    public void setOk(boolean ok) {
+        this.ok = ok;
+    }
+
+    /**
+     * 
+     * @return
+     *     The rating
+     */
+    public double getRating() {
+        return rating;
+    }
+
+    /**
+     * 
+     * @param rating
+     *     The rating
+     */
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+    /**
+     * 
+     * @return
+     *     The ratingColor
+     */
+    public String getRatingColor() {
+        return ratingColor;
+    }
+
+    /**
+     * 
+     * @param ratingColor
+     *     The ratingColor
+     */
+    public void setRatingColor(String ratingColor) {
+        this.ratingColor = ratingColor;
+    }
+
+    /**
+     * 
+     * @return
+     *     The ratingSignals
+     */
+    public int getRatingSignals() {
+        return ratingSignals;
+    }
+
+    /**
+     * 
+     * @param ratingSignals
+     *     The ratingSignals
+     */
+    public void setRatingSignals(int ratingSignals) {
+        this.ratingSignals = ratingSignals;
+    }
+
+    /**
+     * 
+     * @return
+     *     The photos
+     */
+    public Photos getPhotos() {
+        return photos;
+    }
+
+    /**
+     * 
+     * @param photos
+     *     The photos
+     */
+    public void setPhotos(Photos photos) {
+        this.photos = photos;
+    }
+
+    /**
+     * 
+     * @return
+     *     The reasons
+     */
+    public Reasons getReasons() {
+        return reasons;
+    }
+
+    /**
+     * 
+     * @param reasons
+     *     The reasons
+     */
+    public void setReasons(Reasons reasons) {
+        this.reasons = reasons;
     }
 
     /**
@@ -227,37 +399,55 @@ public class Venue {
     /**
      * 
      * @return
-     *     The referralId
+     *     The createdAt
      */
-    public String getReferralId() {
-        return referralId;
+    public int getCreatedAt() {
+        return createdAt;
     }
 
     /**
      * 
-     * @param referralId
-     *     The referralId
+     * @param createdAt
+     *     The createdAt
      */
-    public void setReferralId(String referralId) {
-        this.referralId = referralId;
+    public void setCreatedAt(int createdAt) {
+        this.createdAt = createdAt;
     }
 
     /**
      * 
      * @return
-     *     The venueChains
+     *     The tips
      */
-    public List<Object> getVenueChains() {
-        return venueChains;
+    public Tips getTips() {
+        return tips;
     }
 
     /**
      * 
-     * @param venueChains
-     *     The venueChains
+     * @param tips
+     *     The tips
      */
-    public void setVenueChains(List<Object> venueChains) {
-        this.venueChains = venueChains;
+    public void setTips(Tips tips) {
+        this.tips = tips;
+    }
+
+    /**
+     * 
+     * @return
+     *     The bestPhoto
+     */
+    public BestPhoto getBestPhoto() {
+        return bestPhoto;
+    }
+
+    /**
+     * 
+     * @param bestPhoto
+     *     The bestPhoto
+     */
+    public void setBestPhoto(BestPhoto bestPhoto) {
+        this.bestPhoto = bestPhoto;
     }
 
 }

@@ -6,14 +6,11 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class HereNow {
+public class Tips {
 
     @SerializedName("count")
     @Expose
     private int count;
-    @SerializedName("summary")
-    @Expose
-    private String summary;
 
     /**
      * 
@@ -31,24 +28,6 @@ public class HereNow {
      */
     public void setCount(int count) {
         this.count = count;
-    }
-
-    /**
-     * 
-     * @return
-     *     The summary
-     */
-    public String getSummary() {
-        return summary;
-    }
-
-    /**
-     * 
-     * @param summary
-     *     The summary
-     */
-    public void setSummary(String summary) {
-        this.summary = summary;
     }
 
 }

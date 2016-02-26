@@ -6,14 +6,14 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class HereNow {
+public class Photos {
 
     @SerializedName("count")
     @Expose
     private int count;
-    @SerializedName("summary")
+    @SerializedName("groups")
     @Expose
-    private String summary;
+    private List<Group> groups = new ArrayList<Group>();
 
     /**
      * 
@@ -36,19 +36,19 @@ public class HereNow {
     /**
      * 
      * @return
-     *     The summary
+     *     The groups
      */
-    public String getSummary() {
-        return summary;
+    public List<Group> getGroups() {
+        return groups;
     }
 
     /**
      * 
-     * @param summary
-     *     The summary
+     * @param groups
+     *     The groups
      */
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
     }
 
 }

@@ -1,5 +1,4 @@
-
-package mx.antonioyee.pueblosmagicos.responses.venue;
+package mx.antonioyee.pueblosmagicos.responses.venues;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -23,7 +22,7 @@ public class Category {
     private Icon icon;
     @SerializedName("primary")
     @Expose
-    private boolean primary;
+    private Boolean primary;
 
     /**
      * 
@@ -120,7 +119,7 @@ public class Category {
      * @return
      *     The primary
      */
-    public boolean isPrimary() {
+    public Boolean getPrimary() {
         return primary;
     }
 
@@ -129,7 +128,7 @@ public class Category {
      * @param primary
      *     The primary
      */
-    public void setPrimary(boolean primary) {
+    public void setPrimary(Boolean primary) {
         this.primary = primary;
     }
 
